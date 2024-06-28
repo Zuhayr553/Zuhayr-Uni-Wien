@@ -19,8 +19,10 @@ dependencies:
   hooks_riverpod: ^2.3.6
   logger: ^1.4.0
   riverpod_annotation: ^2.1.1
+  fluent_ui: ^4.8.7
   shared_preferences: any
   intl: any
+  go_router: ^10.0.0
 
 dev_dependencies:
   ffigen: ^8.0.2

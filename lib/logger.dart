@@ -19,7 +19,7 @@ class CustomLogger {
 
   static final CustomLogger _customLogger = CustomLogger._internal();
 
-  static const String appName = 'Aqua';
+  static const String appName = 'Uni Wien Demo App';
 
   log.Logger internalLogger = log.Logger(
     printer: log.SimplePrinter(printTime: true),

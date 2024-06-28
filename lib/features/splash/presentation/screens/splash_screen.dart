@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:uni_wien_zuhayr_test/features/home/pages/pages.dart';
 import 'package:uni_wien_zuhayr_test/shared/extensions/context_extensions.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
@@ -14,21 +16,19 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 2), () async {});
+    Future.delayed(const Duration(seconds: 2), () async {
+      context.goNamed('home');
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.onSurface,
-      body: Center(
+    return ScaffoldPage(
+      padding: EdgeInsets.zero,
+      content: SizedBox.expand(
         child: Text(
           context.loc.welcomeTextSplashScreen,
-          style: const TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w600,
-            fontSize: 18.0,
-          ),
+          textAlign: TextAlign.center,
         ),
       ),
     );
