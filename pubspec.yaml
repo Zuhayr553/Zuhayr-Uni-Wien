@@ -1,0 +1,37 @@
+name: uni_wien_zuhayr_test
+description: "Demo Application"
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_hooks: ^0.18.0
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^2.4.0
+  flutter_screenutil: ^5.8.4
+  flutter_secure_storage: ^8.0.0
+  google_fonts: ^5.1.0
+  hooks_riverpod: ^2.3.6
+  logger: ^1.4.0
+  riverpod_annotation: ^2.1.1
+  shared_preferences: any
+  intl: any
+
+dev_dependencies:
+  ffigen: ^8.0.2
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+  riverpod_generator: ^2.2.4
+  riverpod_lint: ^2.3.10
+
+flutter:
+  generate: true
+  uses-material-design: true
+
