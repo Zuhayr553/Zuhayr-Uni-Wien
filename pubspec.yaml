@@ -15,7 +15,6 @@ dependencies:
     sdk: flutter
   flutter_riverpod: ^2.4.0
   flutter_screenutil: ^5.8.4
-  flutter_secure_storage: ^8.0.0
   google_fonts: ^5.1.0
   hooks_riverpod: ^2.3.6
   logger: ^1.4.0

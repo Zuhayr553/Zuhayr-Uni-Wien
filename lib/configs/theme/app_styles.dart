@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:uni_wien_zuhayr_test/configs/colors/app_colors.dart';
 import 'package:uni_wien_zuhayr_test/configs/colors/colors_schemes.dart';
 import 'package:uni_wien_zuhayr_test/configs/theme/theme.dart';
 
@@ -16,7 +18,10 @@ class AppStyle {
   static const backgroundGradient = LinearGradient(
     begin: Alignment(0.00, -1.00),
     end: Alignment(0, 1),
-    colors: [],
+    colors: [
+      Colors.black,
+      Colors.white,
+    ],
   );
 
   static const gridItemGradient = LinearGradient(
@@ -62,10 +67,10 @@ class AppStyle {
 
   static ThemeData _create(ApplicationColors colors, AppTypography typography) {
     return ThemeData(
-      fontFamily: 'HelveticaNeue',
+      fontFamily: GoogleFonts.poppins().fontFamily,
       colorScheme: colors.colorScheme,
       textTheme: typography.appTextTheme,
-      scaffoldBackgroundColor: colors.colorScheme.background,
+      scaffoldBackgroundColor: colors.colorScheme.surface,
       //ANCHOR - ElevatedButton
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -99,21 +104,21 @@ class AppStyle {
       ),
       //ANCHOR - AppBar
       appBarTheme: AppBarTheme(
-        iconTheme: IconThemeData(color: colors.colorScheme.background),
+        iconTheme: IconThemeData(color: colors.colorScheme.surface),
         shadowColor: Colors.transparent,
         titleTextStyle: typography.appTextTheme.titleMedium?.copyWith(
           fontSize: 18.sp,
           letterSpacing: 0.15,
-          color: colors.colorScheme.onBackground,
+          color: colors.colorScheme.onSurface,
         ),
       ),
       //ANCHOR - Chip
       chipTheme: ChipThemeData(
         brightness: Brightness.dark,
         selectedColor: colors.colorScheme.secondary,
-        backgroundColor: colors.colorScheme.background,
+        backgroundColor: colors.colorScheme.onSurface,
         secondarySelectedColor: colors.colorScheme.secondary,
-        disabledColor: colors.colorScheme.background,
+        disabledColor: colors.colorScheme.onSurface,
         padding: const EdgeInsets.all(0.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.r),
@@ -138,7 +143,7 @@ class AppStyle {
         filled: true,
         fillColor: colors.colorScheme.surface,
         hintStyle: typography.appTextTheme.labelLarge?.copyWith(
-          color: colors.colorScheme.onBackground,
+          color: colors.colorScheme.onSurface,
           fontSize: 14.sp,
         ),
         contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
@@ -165,8 +170,8 @@ class AppStyle {
       ),
       //ANCHOR - Bottom Nav Bar
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: colors.colorScheme.onBackground,
-        unselectedItemColor: colors.colorScheme.onBackground,
+        selectedItemColor: colors.colorScheme.onSurface,
+        unselectedItemColor: colors.colorScheme.onSurface,
         selectedLabelStyle: typography.bottomNavBarLabelStyle,
         unselectedLabelStyle: typography.bottomNavBarLabelStyle,
       ),
@@ -236,6 +241,6 @@ extension ThemeDataEx on ThemeData {
       LinearGradient(
         begin: begin,
         end: end,
-        colors: [],
+        colors: const [],
       );
 }
