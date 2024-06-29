@@ -36,7 +36,7 @@ class HomeBody extends ConsumerWidget {
                 ),
                 headerBoldText(
                   context,
-                  'Overview',
+                  context.loc.overviewTextHomePage,
                 ),
                 SizedBox(
                   height: 2.h,
@@ -68,7 +68,10 @@ class HomeBody extends ConsumerWidget {
                 SizedBox(
                   height: 2.h,
                 ),
-                headerBoldText(context, 'Overview'),
+                headerBoldText(
+                  context,
+                  context.loc.overviewTextHomePage,
+                ),
                 SizedBox(
                   height: 2.h,
                 ),
@@ -184,24 +187,6 @@ Widget _buildContentForChartTwo(
   );
 }
 
-ChartTitle chartTitle(BuildContext context) {
-  return ChartTitle(
-    text: "Our Data",
-    borderWidth: 8,
-    textStyle:
-        FluentTheme.of(context).typography.bodyStrong?.copyWith(fontSize: 20),
-  );
-}
-
-TooltipBehavior tooltipBehavior() {
-  return TooltipBehavior(
-    enable: true,
-    animationDuration: 200,
-    header: '',
-    format: 'point.x : point.y',
-  );
-}
-
 List<RadialBarSeries<ChartSampleData, String>> _getRadialBarDefaultSeries(
   List<ChartSampleData> chartData,
   BuildContext context,
@@ -225,4 +210,22 @@ List<RadialBarSeries<ChartSampleData, String>> _getRadialBarDefaultSeries(
       dataLabelMapper: (ChartSampleData data, _) => data.x as String,
     ),
   ];
+}
+
+ChartTitle chartTitle(BuildContext context) {
+  return ChartTitle(
+    text: context.loc.ourDataTextHomePage,
+    borderWidth: 8,
+    textStyle:
+        FluentTheme.of(context).typography.bodyStrong?.copyWith(fontSize: 20),
+  );
+}
+
+TooltipBehavior tooltipBehavior() {
+  return TooltipBehavior(
+    enable: true,
+    animationDuration: 200,
+    header: '',
+    format: 'point.x : point.y',
+  );
 }

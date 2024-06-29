@@ -16,7 +16,10 @@ class SettingsBody extends ConsumerWidget {
       padding: const EdgeInsets.all(24),
       content: Column(
         children: [
-          headerBoldText(context, 'Settings'),
+          headerBoldText(
+            context,
+            context.loc.settingsTextHomePage,
+          ),
           SizedBox(
             height: 16.h,
           ),
@@ -25,7 +28,8 @@ class SettingsBody extends ConsumerWidget {
             children: [
               bodyText(
                 context,
-                'Switch Language',
+                context.loc.switchTextSettingsPage,
+                customFontSize: 14,
               ),
               SizedBox(
                 height: 30.h,
@@ -43,8 +47,8 @@ class SettingsBody extends ConsumerWidget {
                   child: Text(
                     currentLang.languageCode ==
                             SupportedLanguageCodes.german.value
-                        ? 'German'
-                        : 'English',
+                        ? context.loc.germanTextSettingsPage
+                        : context.loc.englishTextSettingsPage,
                     style: FluentTheme.of(context).typography.body?.copyWith(
                         color: darkMode
                             ? AppColors.richBlack
@@ -62,7 +66,8 @@ class SettingsBody extends ConsumerWidget {
             children: [
               bodyText(
                 context,
-                'Dark Mode',
+                context.loc.darkModeTextSettingsPage,
+                customFontSize: 14,
               ),
               SizedBox(
                 height: 30.h,

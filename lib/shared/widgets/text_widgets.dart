@@ -12,13 +12,17 @@ SizedBox bodyText(
   BuildContext context,
   String text, {
   double? customWidth,
+  double? customFontSize,
 }) {
   return SizedBox(
     width: customWidth,
     child: Text(
       text,
       textAlign: TextAlign.justify,
-      style: FluentTheme.of(context).typography.body?.copyWith(fontSize: 12),
+      style: FluentTheme.of(context)
+          .typography
+          .body
+          ?.copyWith(fontSize: customFontSize ?? 12),
     ),
   );
 }
