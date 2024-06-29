@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color blueGreen = Color(0xFF00A1CC);
+  static const Color deepSkyBlue = Color(0xFF00BFFF);
 
-  static const Color eerieBlack = Color(0xFF191919);
+  static const Color emeraldGreen = Color(0xFF50C878);
 
-  static const Color graniteGray = Color(0xFF5f5e5e);
+  static const Color darkSlateGray = Color(0xFF2F4F4F);
 
-  static const Color charlestonGreen = Color(0xFF272727);
+  static const Color coral = Color(0xFFFF7F50);
 
-  static const Color portlandOrange = Color(0xFFFF4B2B);
+  static const Color ghostWhite = Color(0xFFF8F8FF);
 
-  static const Color antiFlashWhite = Color(0xFFF2F2F2);
+  static const Color platinum = Color(0xFFE5E4E2);
 
-  static const Color brightGray = Color(0xFFEAEAEB);
+  static const Color darkGray = Color(0xFFA9A9A9);
 
-  static const Color cadetGrey = Color(0xFF8E9AB5);
+  static const Color richBlack = Color(0xFF040405);
 
-  static const Color lightSilver = Color(0xFFD8D8D8);
+  static const Color shinyBlack = Color.fromARGB(255, 33, 34, 35);
 
-  static const Color lotion = Color(0xFFFAFAFA);
+  static const Color flame = Color(0xFFE25822);
+
+  static const Color lightGray = Color(0xFFD3D3D3);
 }

@@ -34,6 +34,52 @@ class AppStyle {
       fontFamily: GoogleFonts.poppins().fontFamily,
       scaffoldBackgroundColor: colors.colorScheme.surface,
       typography: typography.appTextTheme,
+      toggleButtonTheme: ToggleButtonThemeData(
+        checkedButtonStyle: ButtonStyle(
+          backgroundColor: ButtonState.all(colors.toggleButtonColor),
+        ),
+        uncheckedButtonStyle: ButtonStyle(
+          backgroundColor: ButtonState.all(colors.toggleButtonColor),
+        ),
+      ),
+      navigationPaneTheme: NavigationPaneThemeData(
+        backgroundColor: colors.navigationPaneBackgroundColor,
+        selectedIconColor: ButtonState.all(colors.colorScheme.onSurface),
+        unselectedIconColor: ButtonState.all(colors.colorScheme.onSecondary),
+        selectedTextStyle: ButtonState.all(
+          TextStyle(color: colors.colorScheme.onSurface),
+        ),
+        unselectedTextStyle: ButtonState.all(
+          TextStyle(color: colors.colorScheme.onSecondary),
+        ),
+      ),
+      toggleSwitchTheme: ToggleSwitchThemeData(
+        checkedDecoration: ButtonState.all(
+          BoxDecoration(
+            color: colors.navigationPaneBackgroundColor,
+            borderRadius: BorderRadius.circular(50),
+          ),
+        ),
+        uncheckedDecoration: ButtonState.all(
+          BoxDecoration(
+            color: colors.colorScheme.secondaryContainer,
+            border: Border.all(color: colors.colorScheme.secondary),
+            borderRadius: BorderRadius.circular(50),
+          ),
+        ),
+        checkedKnobDecoration: ButtonState.all(
+          BoxDecoration(
+            color: colors.colorScheme.onSurface,
+            borderRadius: BorderRadius.circular(50),
+          ),
+        ),
+        uncheckedKnobDecoration: ButtonState.all(
+          BoxDecoration(
+            color: colors.colorScheme.onSurface,
+            borderRadius: BorderRadius.circular(50),
+          ),
+        ),
+      ),
     );
   }
 }

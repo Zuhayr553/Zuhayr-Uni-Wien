@@ -32,7 +32,7 @@ class MyApp extends ConsumerWidget {
         designSize: const Size(641, 1007),
         builder: (context, _) => FluentApp.router(
           theme: ref.watch(lightThemeProvider(context)),
-          color: darkMode ? AppColors.eerieBlack : AppColors.antiFlashWhite,
+          color: darkMode ? AppColors.richBlack : AppColors.ghostWhite,
           darkTheme: ref.watch(darkThemeProvider(context)),
           themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
           locale: Locale.fromSubtags(languageCode: languageCode),

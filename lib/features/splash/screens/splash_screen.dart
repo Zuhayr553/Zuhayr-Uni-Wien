@@ -1,8 +1,5 @@
-import 'package:fluent_ui/fluent_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:uni_wien_zuhayr_test/features/home/pages/pages.dart';
-import 'package:uni_wien_zuhayr_test/shared/extensions/context_extensions.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   static const routeName = '/';
@@ -17,7 +14,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () async {
-      context.go(HomePage.routeName);
+      context.pushReplacement(HomePage.routeName);
     });
   }
 

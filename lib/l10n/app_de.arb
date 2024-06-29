@@ -3,5 +3,7 @@
   "welcomeTextSplashScreen":"Willkommen zu meiner Bewerbung",
   "homeTextHomePage":"Startseite",
   "taskManagerTextHomePage":"Task-Manager",
-  "settingsTextHomePage":"Einstellungen"
+  "settingsTextHomePage":"Einstellungen",
+  "fakeDataOverviewHomeBody":"Die FakeData-Klasse in Flutter dient zum Simulieren und Generieren von zufälligen ChartSampleData zu Test- und Demonstrationszwecken. Sie enthält Methoden zum Generieren von zufälligen Farben und zum Erstellen von Listen von ChartSampleData-Objekten mit simulierten Datenattributen wie Namen, numerischen Werten, Prozenttext und zufällig generierten Farben. Darüber hinaus bietet sie eine Methode zum asynchronen Abrufen einer Liste dieser generierten Datenpunkte, wodurch eine für Datenabrufvorgänge typische Netzwerkverzögerung simuliert wird. Diese Klasse wurde entwickelt, um das Testen und Präsentieren von Datenvisualisierungskomponenten wie Diagrammen in Flutter-Anwendungen zu erleichtern und bietet Flexibilität beim Generieren und Bearbeiten synthetischer Daten für verschiedene Szenarien."
+
 }

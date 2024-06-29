@@ -1,3 +1,4 @@
+import 'package:uni_wien_zuhayr_test/features/home/models/models.dart';
 import 'package:uni_wien_zuhayr_test/shared/providers/shared_providers.dart';
 
 enum SupportedLanguageCodes {

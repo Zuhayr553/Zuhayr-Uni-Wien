@@ -3,5 +3,6 @@
   "welcomeTextSplashScreen":"Welcome To My Application",
   "homeTextHomePage":"Home",
   "taskManagerTextHomePage":"Task Manager",
-  "settingsTextHomePage":"Settings"
+  "settingsTextHomePage":"Settings",
+  "fakeDataOverviewHomeBody":"The FakeData class in Flutter serves to simulate and generate random ChartSampleData for testing and demonstration purposes. It includes methods to generate random colors and create lists of ChartSampleData objects with simulated data attributes such as names, numeric values, percentage text, and randomly generated colors. Additionally, it provides a method to asynchronously fetch a list of these generated data points, simulating a network delay typical of data fetching operations. This class is designed to facilitate the testing and presentation of data visualization components like charts within Flutter applications, offering flexibility in generating and manipulating synthetic data for various scenarios."
 }
