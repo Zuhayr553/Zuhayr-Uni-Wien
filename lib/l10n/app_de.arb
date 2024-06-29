@@ -1,4 +1,7 @@
 {
   "@@locale": "de",
-  "welcomeTextSplashScreen":"Willkommen zu meiner Bewerbung"
+  "welcomeTextSplashScreen":"Willkommen zu meiner Bewerbung",
+  "homeTextHomePage":"Startseite",
+  "taskManagerTextHomePage":"Task-Manager",
+  "settingsTextHomePage":"Einstellungen"
 }

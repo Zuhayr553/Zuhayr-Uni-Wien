@@ -6,31 +6,31 @@ import 'package:uni_wien_zuhayr_test/shared/debug/navigation_observer.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>();
 
+enum AppRoutes {
+  home,
+}
+
 class Routes {
   final router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: '/',
+    initialLocation: SplashScreen.routeName,
     observers: [AppNavigationObserver()],
     routes: [
       /// Splash
       GoRoute(
-        path: '/',
+        path: SplashScreen.routeName,
         pageBuilder: (context, state) => const MaterialPage(
           fullscreenDialog: true,
           child: SplashScreen(),
         ),
-        routes: [
-          /// Home
-          GoRoute(
-            path: HomePage.routeName,
-            name: 'home',
-            pageBuilder: (context, state) => MaterialPage(
-              key: state.pageKey,
-              fullscreenDialog: true,
-              child: const HomePage(),
-            ),
-          ),
-        ],
+      ),
+      GoRoute(
+        path: HomePage.routeName,
+        pageBuilder: (context, state) => MaterialPage(
+          key: state.pageKey,
+          fullscreenDialog: true,
+          child: const HomePage(),
+        ),
       ),
     ],
   );

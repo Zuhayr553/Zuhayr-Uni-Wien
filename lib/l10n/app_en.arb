@@ -1,4 +1,7 @@
 {
   "@@locale": "en",
-  "welcomeTextSplashScreen":"Welcome To My Application"
+  "welcomeTextSplashScreen":"Welcome To My Application",
+  "homeTextHomePage":"Home",
+  "taskManagerTextHomePage":"Task Manager",
+  "settingsTextHomePage":"Settings"
 }

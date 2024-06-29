@@ -2,7 +2,6 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uni_wien_zuhayr_test/configs/colors/app_colors.dart';
 import 'package:uni_wien_zuhayr_test/configs/theme/app_styles.dart';
-import 'package:uni_wien_zuhayr_test/features/splash/presentation/screens/splash_screen.dart';
 import 'package:uni_wien_zuhayr_test/routes.dart';
 import 'package:uni_wien_zuhayr_test/shared/providers/shared_providers.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -35,7 +34,7 @@ class MyApp extends ConsumerWidget {
           theme: ref.watch(lightThemeProvider(context)),
           color: darkMode ? AppColors.eerieBlack : AppColors.antiFlashWhite,
           darkTheme: ref.watch(darkThemeProvider(context)),
-          themeMode: ThemeMode.dark,
+          themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
           locale: Locale.fromSubtags(languageCode: languageCode),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,

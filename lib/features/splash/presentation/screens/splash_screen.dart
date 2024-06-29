@@ -5,7 +5,7 @@ import 'package:uni_wien_zuhayr_test/features/home/pages/pages.dart';
 import 'package:uni_wien_zuhayr_test/shared/extensions/context_extensions.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
-  static const String routeName = '/splashScreen';
+  static const routeName = '/';
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
@@ -17,7 +17,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () async {
-      context.goNamed('home');
+      context.go(HomePage.routeName);
     });
   }
 
