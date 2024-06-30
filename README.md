@@ -27,7 +27,7 @@ These instructions will get you a copy of the project up and running on your loc
 
    ### Run the app using the following command: 
    flutter run -d windows
-   or also ctrl+f5 but ensure windows device is selected in bottom left
+   or also ctrl+f5 but ensure windows device is selected in bottom right in devices section
 
   ### Debugging:
    Use VS Code\'s debugging tools to set breakpoints, inspect variables, and debug your Flutter app running on Windows.
