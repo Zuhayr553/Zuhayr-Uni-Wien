@@ -100,6 +100,49 @@ These instructions will get you a copy of the project up and running on your loc
  The project follows a modular structure with separation of concerns and clean architecture principles.
  I have used a feature first project structure and every feature has a presentation(pages), domain(models) and data(providers) in this case adhering to clean code principles.
 
+## Data Flow and Architecture
+
+This project utilizes state management from the `Riverpod` package and a `FakeData` class as backend to handle and provide data to the UI and simulate a network delay a well. Below is an explanation of the data flow and architecture.
+
+### Data Layer
+
+**FakeData Class:**
+- The `FakeData` class is responsible for generating and fetching random data for charts and tasks. 
+- It includes methods to create random colors, chart data, and tasks.
+- Data fetching methods simulate network delays to mimic real-world asynchronous data fetching.
+
+### State Management
+
+**TaskNotifier Class:**
+- The `TaskNotifier` class extends `StateNotifier` and manages a list of task objects.
+- It provides methods to set initial tasks, add a new task, and remove an existing task from the state.
+- This class ensures that any changes to the task list are properly managed and can be reacted to by the UI.
+
+**Providers:**
+- `taskNotifierProvider`: A `StateNotifierProvider` that supplies an instance of `TaskNotifier`. This provider is used to interact with the task state, allowing for additions, removals, and updates.
+- `taskProvider`: A `FutureProvider` that handles the fetching of tasks using the `FakeData` class. This provider initializes the task state within the `TaskNotifier` once the data is fetched.
+- `chartDataProvider`: A `FutureProvider.autoDispose` that handles fetching chart data using the `FakeData` class. The `autoDispose` feature ensures that the provider is disposed of when no longer needed, while the `keepAlive` method allows the data to persist as long as it is being used.
+
+### Widget Layer
+
+**Using the Providers:**
+- The `prefsProvider` is utilized to obtain the dark mode preference of the user.
+- The `taskProvider` is used to fetch the list of tasks asynchronously, handling the initial data loading state.
+- The `taskNotifierProvider` is watched to get the current list of tasks and ensure the UI updates in response to any changes in the task state.
+- The `chartDataProvider` is used to fetch chart data asynchronously, providing the UI with the necessary data for chart rendering and ensuring efficient memory management with the `autoDispose` feature.
+
+### Data Flow
+
+1. **Data Generation:** The `FakeData` class generates random data for tasks and charts, providing the necessary data for the application.
+2. **Data Fetching:** The `fetchTasks` method in `FakeData` simulates a network delay and returns a list of tasks, simulating a real-world data fetch scenario. Similarly, the `fetchChartData` method simulates a delay and provides chart data.
+3. **State Initialization:** The `taskProvider` fetches the tasks and initializes the state within the `TaskNotifier` using the `setInitialTasks` method. The `chartDataProvider` fetches the chart data and manages its lifecycle efficiently.
+4. **State Management:** The `TaskNotifier` manages the state of tasks, providing methods to add, remove, and modify tasks. This ensures the state is consistent and reactive.
+5. **UI Consumption:** The widget watches the `taskProvider` for the initial data load and the `taskNotifierProvider` for any state changes, updating the UI accordingly based on the current state of tasks. The `chartDataProvider` is also watched to ensure the UI is updated with the latest chart data.
+
+This architecture ensures a clear separation of concerns, with the `FakeData` class handling data generation and fetching, the `TaskNotifier` managing the task state, and the providers acting as the bridge between the data layer and the UI. This approach promotes maintainability, scalability, and ease of understanding within the project.
+
+
+
 
 
 
