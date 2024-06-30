@@ -91,12 +91,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 **Localization Management:** Uses flutter gen-l10n for generating Dart code from ARB files. Add or modify strings in ARB files (lib/l10n) and run flutter gen-l10n to update localized strings across the app. Generated code includes access methods for localized strings and supports dynamic language switching.
 
+## Additional Technologies
 
-
-
+- **Routing:** Utilizes go_router for routing within the application.
+- **Local Data Storage:** Uses shared_preferences for storing local data such as user preferences, like dark mode settings.
 
 ## Project Structure 
  The project follows a modular structure with separation of concerns and clean architecture principles.
+ I have used a feature first project structure and every feature has a presentation(pages), domain(models) and data(providers) in this case adhering to clean code principles.
+
 
 
 
