@@ -33,6 +33,16 @@ class HomeBody extends ConsumerWidget {
               ),
             ],
           ),
+          const SizedBox(
+            height: 25,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50.0),
+            child: bodyText(
+              context,
+              '${context.loc.fakeDataOverviewHomeBody} ${context.loc.fakeDataOverviewHomeBody} ${context.loc.fakeDataOverviewHomeBody}',
+            ),
+          )
         ],
       ),
     );
@@ -100,7 +110,7 @@ Widget _buildContent(
           children: [
             SfCircularChart(
               title: chartTitle(context),
-              tooltipBehavior: tooltipBehavior(),
+              tooltipBehavior: tooltipBehavior(context),
               series: _getRadialBarDefaultSeries(
                 chartData,
                 context,
@@ -128,8 +138,8 @@ Widget _buildContentForChartTwo(
             SfCartesianChart(
               plotAreaBorderWidth: 2,
               plotAreaBackgroundColor: darkMode
-                  ? AppColors.darkGray
-                  : AppColors.lightGray.withOpacity(0.1),
+                  ? AppColors.darkGray.withOpacity(0.6)
+                  : AppColors.lightGray.withOpacity(0.6),
               isTransposed: true,
               primaryXAxis: CategoryAxis(
                 labelStyle: FluentTheme.of(context)
@@ -137,7 +147,7 @@ Widget _buildContentForChartTwo(
                     .bodyStrong
                     ?.copyWith(fontSize: 12),
               ),
-              tooltipBehavior: tooltipBehavior(),
+              tooltipBehavior: tooltipBehavior(context),
               primaryYAxis: NumericAxis(
                 labelStyle: FluentTheme.of(context)
                     .typography
@@ -202,11 +212,16 @@ ChartTitle chartTitle(BuildContext context) {
   );
 }
 
-TooltipBehavior tooltipBehavior() {
+TooltipBehavior tooltipBehavior(BuildContext context) {
   return TooltipBehavior(
     enable: true,
     animationDuration: 200,
     header: '',
+    textStyle: FluentTheme.of(context)
+        .typography
+        .caption
+        ?.copyWith(color: AppColors.shinyBlack),
+    color: AppColors.darkGray,
     format: 'point.x : point.y',
   );
 }
