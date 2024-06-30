@@ -1,5 +1,5 @@
 import 'package:uni_wien_zuhayr_test/data/backend/backend.dart';
-import 'package:uni_wien_zuhayr_test/shared/providers/shared_providers.dart';
+import 'providers.dart';
 
 final chartDataProvider = FutureProvider.autoDispose<List<ChartSampleData>>(
   (ref) async {

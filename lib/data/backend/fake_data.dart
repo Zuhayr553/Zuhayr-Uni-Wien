@@ -33,4 +33,23 @@ class FakeData {
       ..._generateRandomChartData(8),
     ];
   }
+
+  List<Task> _generateRandomTasks(int count) {
+    List<Task> tasks = [];
+    for (int i = 0; i < count; i++) {
+      tasks.add(
+        Task(
+          title: 'Task ${i + 1}',
+          subtext:
+              'This is the description for task ${i + 1}. It includes some random details to make the text a bit longer.',
+        ),
+      );
+    }
+    return tasks;
+  }
+
+  Future<List<Task>> fetchTasks() async {
+    await Future.delayed(const Duration(seconds: 1)); // Simulate network delay
+    return _generateRandomTasks(20);
+  }
 }

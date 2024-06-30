@@ -6,10 +6,6 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final languages = ref
-        .watch(languageProvider(context).select((p) => p.supportedLanguages));
-    final currentLang =
-        ref.watch(languageProvider(context).select((p) => p.currentLanguage));
     final selectedIndex = ref.watch(selectedIndexProvider.notifier);
 
     return ScaffoldPage(

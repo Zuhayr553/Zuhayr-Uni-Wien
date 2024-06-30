@@ -1,5 +1,3 @@
-import 'package:uni_wien_zuhayr_test/features/home/models/models.dart';
-import 'package:uni_wien_zuhayr_test/shared/widgets/text_widgets.dart';
 import 'widgets.dart';
 
 class SettingsBody extends ConsumerWidget {
@@ -7,8 +5,6 @@ class SettingsBody extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final languages = ref
-        .watch(languageProvider(context).select((p) => p.supportedLanguages));
     final darkMode = ref.watch(prefsProvider.select((p) => p.isDarkMode));
     final currentLang =
         ref.watch(languageProvider(context).select((p) => p.currentLanguage));
@@ -32,7 +28,6 @@ class SettingsBody extends ConsumerWidget {
                 customFontSize: 14,
               ),
               SizedBox(
-                height: 30.h,
                 width: 80.w,
                 child: ToggleButton(
                   checked: currentLang.languageCode ==
@@ -70,7 +65,6 @@ class SettingsBody extends ConsumerWidget {
                 customFontSize: 14,
               ),
               SizedBox(
-                height: 30.h,
                 child: ToggleSwitch(
                   checked: darkMode,
                   onChanged: (val) {

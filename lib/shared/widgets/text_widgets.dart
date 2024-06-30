@@ -1,10 +1,17 @@
 import 'package:fluent_ui/fluent_ui.dart';
 
-Text headerBoldText(BuildContext context, String text) {
+Text headerBoldText(
+  BuildContext context,
+  String text, {
+  Color? color,
+  double? customFontSize,
+}) {
   return Text(
     text,
-    style:
-        FluentTheme.of(context).typography.bodyStrong?.copyWith(fontSize: 16),
+    style: FluentTheme.of(context).typography.bodyStrong?.copyWith(
+          fontSize: customFontSize ?? 16,
+          color: color,
+        ),
   );
 }
 
@@ -13,16 +20,19 @@ SizedBox bodyText(
   String text, {
   double? customWidth,
   double? customFontSize,
+  Color? color,
+  TextAlign? textAlign,
 }) {
   return SizedBox(
     width: customWidth,
     child: Text(
       text,
-      textAlign: TextAlign.justify,
-      style: FluentTheme.of(context)
-          .typography
-          .body
-          ?.copyWith(fontSize: customFontSize ?? 12),
+      textAlign: textAlign ?? TextAlign.justify,
+      overflow: TextOverflow.fade,
+      style: FluentTheme.of(context).typography.body?.copyWith(
+            fontSize: customFontSize ?? 12,
+            color: color,
+          ),
     ),
   );
 }

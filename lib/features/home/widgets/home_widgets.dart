@@ -1,5 +1,4 @@
 import 'package:uni_wien_zuhayr_test/data/models/models.dart';
-import 'package:uni_wien_zuhayr_test/shared/widgets/text_widgets.dart';
 import 'widgets.dart';
 
 class HomeBody extends ConsumerWidget {
@@ -9,99 +8,81 @@ class HomeBody extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final chartDataAsync = ref.watch(chartDataProvider);
     final darkMode = ref.watch(prefsProvider.select((p) => p.isDarkMode));
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Column(
-              children: [
-                SizedBox(
-                  height: 400.h,
-                  width: 250.w,
-                  child: chartDataAsync.when(
-                    loading: () => _buildLoading(),
-                    error: (error, stackTrace) => _buildError(
-                      error.toString(),
-                    ),
-                    data: (chartData) => _buildContent(
-                      chartData,
-                      context,
-                      darkMode,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                headerBoldText(
-                  context,
-                  context.loc.overviewTextHomePage,
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                bodyText(
-                  context,
-                  context.loc.fakeDataOverviewHomeBody,
-                  customWidth: 200.w,
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                SizedBox(
-                  height: 400.h,
-                  width: 250.w,
-                  child: chartDataAsync.when(
-                    loading: () => _buildLoading(),
-                    error: (error, stackTrace) => _buildError(
-                      error.toString(),
-                    ),
-                    data: (chartData) => _buildContentForChartTwo(
-                      chartData,
-                      context,
-                      darkMode,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                headerBoldText(
-                  context,
-                  context.loc.overviewTextHomePage,
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                bodyText(
-                  context,
-                  context.loc.fakeDataOverviewHomeBody,
-                  customWidth: 200.w,
-                ),
-              ],
-            ),
-          ],
-        ),
-      ],
+
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              buildChartSection(
+                chartDataAsync,
+                context,
+                darkMode,
+                _buildContent,
+                context.loc.overviewTextHomePage,
+                context.loc.fakeDataOverviewHomeBody,
+              ),
+              buildChartSection(
+                chartDataAsync,
+                context,
+                darkMode,
+                _buildContentForChartTwo,
+                context.loc.overviewTextHomePage,
+                context.loc.fakeDataOverviewHomeBody,
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
 
-Widget _buildLoading() {
-  return const ScaffoldPage(
-    padding: EdgeInsets.zero,
-    content: Center(child: CircularProgressIndicator()),
-  );
-}
-
-Widget _buildError(String error) {
-  return ScaffoldPage(
-    padding: EdgeInsets.zero,
-    content: Center(
-      child: Text('Error: $error'),
-    ),
+Widget buildChartSection(
+  AsyncValue<List<ChartSampleData>> chartDataAsync,
+  BuildContext context,
+  bool darkMode,
+  Widget Function(List<ChartSampleData>, BuildContext, bool) buildContent,
+  String headerText,
+  String text,
+) {
+  return Column(
+    children: [
+      SizedBox(
+        height: 380,
+        child: chartDataAsync.when(
+          loading: () => buildLoading(context),
+          error: (error, stackTrace) => buildError(
+            error.toString(),
+            context.loc.errorTextHomePage,
+          ),
+          data: (chartData) => buildContent(
+            chartData,
+            context,
+            darkMode,
+          ),
+        ),
+      ),
+      SizedBox(
+        height: 2.h,
+      ),
+      headerBoldText(
+        context,
+        headerText,
+      ),
+      SizedBox(
+        height: 2.h,
+      ),
+      bodyText(
+        context,
+        text,
+        customWidth: 200.w,
+      ),
+      const SizedBox(
+        height: 24,
+      ),
+    ],
   );
 }
 

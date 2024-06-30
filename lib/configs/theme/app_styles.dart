@@ -1,7 +1,4 @@
-import 'package:fluent_ui/fluent_ui.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:uni_wien_zuhayr_test/configs/colors/colors_schemes.dart';
-import 'package:uni_wien_zuhayr_test/configs/theme/theme.dart';
+import 'theme.dart';
 
 class AppStyle {
   const AppStyle._();
@@ -33,7 +30,22 @@ class AppStyle {
     return FluentThemeData(
       fontFamily: GoogleFonts.poppins().fontFamily,
       scaffoldBackgroundColor: colors.colorScheme.surface,
+      iconTheme: const IconThemeData(
+        color: AppColors.shinyBlack,
+      ),
+      brightness: colors.brightness,
       typography: typography.appTextTheme,
+      shadowColor: colors.shadowColor,
+      buttonTheme: ButtonThemeData(
+        defaultButtonStyle: ButtonStyle(
+          backgroundColor: ButtonState.all(colors.toggleButtonColor),
+          shape: ButtonState.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(6),
+            ),
+          ),
+        ),
+      ),
       toggleButtonTheme: ToggleButtonThemeData(
         checkedButtonStyle: ButtonStyle(
           backgroundColor: ButtonState.all(colors.toggleButtonColor),

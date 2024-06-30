@@ -6,10 +6,6 @@ import 'package:uni_wien_zuhayr_test/shared/debug/navigation_observer.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>();
 
-enum AppRoutes {
-  home,
-}
-
 class Routes {
   final router = GoRouter(
     navigatorKey: rootNavigatorKey,

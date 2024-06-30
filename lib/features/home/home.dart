@@ -1,4 +1,5 @@
 export 'pages/pages.dart';
+export 'models/models.dart';
 export 'package:fluent_ui/fluent_ui.dart';
 export 'package:flutter_riverpod/flutter_riverpod.dart';
 export 'package:syncfusion_flutter_charts/charts.dart';
@@ -9,3 +10,7 @@ export 'package:uni_wien_zuhayr_test/features/home/providers/language_provider.d
 export 'package:uni_wien_zuhayr_test/shared/extensions/context_extensions.dart';
 export 'package:uni_wien_zuhayr_test/configs/colors/app_colors.dart';
 export 'package:uni_wien_zuhayr_test/shared/providers/prefs_provider.dart';
+export 'package:uni_wien_zuhayr_test/shared/widgets/shared_widgets.dart';
+export 'package:uni_wien_zuhayr_test/shared/widgets/text_widgets.dart';
+export 'package:go_router/go_router.dart';
+export 'package:uni_wien_zuhayr_test/features/home/widgets/add_task_dialog.dart';

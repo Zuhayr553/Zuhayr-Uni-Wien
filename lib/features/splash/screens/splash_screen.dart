@@ -1,8 +1,5 @@
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:go_router/go_router.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:uni_wien_zuhayr_test/features/home/pages/pages.dart';
+import 'screen.dart';
 
 class SplashScreen extends HookConsumerWidget {
   static const routeName = '/';
@@ -34,7 +31,7 @@ class SplashScreen extends HookConsumerWidget {
             )
                 .animate(controller: animationController)
                 .fadeIn(duration: const Duration(seconds: 1))
-                .slide(duration: const Duration(seconds: 1)),
+                .slide(duration: const Duration(seconds: 2)),
           ],
         ),
       ),

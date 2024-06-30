@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'colors.dart';
 
 class AppColors {
   static const Color deepSkyBlue = Color(0xFF00BFFF);

@@ -1,4 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'providers.dart';
 
 class SelectedIndexNotifier extends StateNotifier<int> {
   SelectedIndexNotifier() : super(0);

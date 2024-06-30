@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:uni_wien_zuhayr_test/configs/colors/app_colors.dart';
+import "colors.dart";
 
 //ANCHOR - Theme Colors
 
 abstract class ApplicationColors {
   Color get navigationPaneBackgroundColor;
   Color get toggleButtonColor;
+  Color get shadowColor;
+  Brightness get brightness;
   ColorScheme get colorScheme;
 }
 
@@ -14,7 +15,13 @@ class DarkThemeColors implements ApplicationColors {
   Color get navigationPaneBackgroundColor => AppColors.shinyBlack;
 
   @override
+  Brightness get brightness => Brightness.dark;
+
+  @override
   Color get toggleButtonColor => AppColors.platinum;
+
+  @override
+  Color get shadowColor => AppColors.darkGray;
 
   @override
   ColorScheme get colorScheme => const ColorScheme(
@@ -41,7 +48,13 @@ class LightThemeColors implements ApplicationColors {
   Color get navigationPaneBackgroundColor => Colors.white;
 
   @override
+  Brightness get brightness => Brightness.light;
+
+  @override
   Color get toggleButtonColor => AppColors.shinyBlack;
+
+  @override
+  Color get shadowColor => AppColors.lightGray;
 
   @override
   ColorScheme get colorScheme => const ColorScheme(
