@@ -17,7 +17,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 
    Clone the repository to your local machine using Git:
-   git clone https://github.com/Zuhayr553/Uni-Wien-Application
+   git clone https://github.com/Zuhayr553/Zuhayr-Uni-Wien
 
    ### Install dependencies:   
    flutter pub get
