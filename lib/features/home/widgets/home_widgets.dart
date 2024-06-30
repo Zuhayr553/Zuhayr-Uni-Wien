@@ -1,4 +1,4 @@
-import 'package:uni_wien_zuhayr_test/data/models/models.dart';
+import '../../../data/data.dart';
 import 'widgets.dart';
 
 class HomeBody extends ConsumerWidget {

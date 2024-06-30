@@ -1,4 +1,4 @@
-import 'package:uni_wien_zuhayr_test/data/backend/backend.dart';
+import '../../../data/data.dart';
 import 'providers.dart';
 
 class TaskNotifier extends StateNotifier<List<Task>> {

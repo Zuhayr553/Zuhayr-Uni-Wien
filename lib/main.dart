@@ -1,9 +1,9 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uni_wien_zuhayr_test/configs/colors/app_colors.dart';
-import 'package:uni_wien_zuhayr_test/configs/theme/app_styles.dart';
-import 'package:uni_wien_zuhayr_test/routes.dart';
-import 'package:uni_wien_zuhayr_test/shared/providers/shared_providers.dart';
+import '../configs/colors/app_colors.dart';
+import '../configs/theme/app_styles.dart';
+import 'routes.dart';
+import '../shared/providers/shared_providers.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {

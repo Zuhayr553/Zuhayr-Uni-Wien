@@ -1,4 +1,4 @@
-import 'package:uni_wien_zuhayr_test/features/home/home.dart';
+import '../../features/home/home.dart';
 
 Widget buildLoading(BuildContext context) {
   return ScaffoldPage(

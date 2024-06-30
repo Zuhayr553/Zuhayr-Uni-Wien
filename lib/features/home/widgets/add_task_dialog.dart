@@ -1,6 +1,6 @@
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:uni_wien_zuhayr_test/data/backend/backend.dart';
+import '../../../data/data.dart';
 import 'widgets.dart';
 
 class AddTaskDialog extends HookConsumerWidget {

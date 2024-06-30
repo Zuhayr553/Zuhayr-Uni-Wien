@@ -25,7 +25,7 @@ class TasksBody extends ConsumerWidget {
                 ),
                 const Spacer(),
                 SizedBox(
-                  width: 70.w,
+                  width: 150,
                   height: 35,
                   child: Button(
                     style: ButtonStyle(

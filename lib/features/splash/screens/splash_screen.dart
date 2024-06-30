@@ -1,4 +1,4 @@
-import 'package:uni_wien_zuhayr_test/features/home/pages/pages.dart';
+import '../../home/home.dart';
 import 'screen.dart';
 
 class SplashScreen extends HookConsumerWidget {
@@ -7,8 +7,10 @@ class SplashScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final darkMode = ref.watch(prefsProvider.select((p) => p.isDarkMode));
+
     final animationController = useAnimationController(
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 1),
     )..forward();
 
     useEffect(() {
@@ -24,6 +26,16 @@ class SplashScreen extends HookConsumerWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 100,
+              child: Center(
+                child: Icon(
+                  FluentIcons.crown,
+                  color: darkMode ? AppColors.platinum : AppColors.shinyBlack,
+                  size: 40,
+                ),
+              ),
+            ),
             Text(
               context.loc.welcomeTextSplashScreen,
               textAlign: TextAlign.center,

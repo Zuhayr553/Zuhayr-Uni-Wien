@@ -9,7 +9,7 @@ class SettingsBody extends ConsumerWidget {
     final currentLang =
         ref.watch(languageProvider(context).select((p) => p.currentLanguage));
     return ScaffoldPage(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(36),
       content: Column(
         children: [
           headerBoldText(

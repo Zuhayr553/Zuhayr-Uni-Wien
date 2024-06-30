@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:uni_wien_zuhayr_test/features/home/widgets/widgets.dart';
+import '../../features/home/home.dart';
 import 'shared_providers.dart';
 
 final prefsProvider = ChangeNotifierProvider<UserPreferencesNotifier>((ref) {

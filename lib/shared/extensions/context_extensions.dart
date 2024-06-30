@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:uni_wien_zuhayr_test/configs/colors/app_colors.dart';
+import '../../configs/colors/colors.dart';
 
 extension LocalizedBuildContext on BuildContext {
   AppLocalizations get loc => AppLocalizations.of(this)!;

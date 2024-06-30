@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'pages.dart';
 
 class HomePage extends ConsumerWidget {
@@ -7,7 +8,7 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedIndex = ref.watch(selectedIndexProvider.notifier);
-
+    final darkMode = ref.watch(prefsProvider.select((p) => p.isDarkMode));
     return ScaffoldPage(
       padding: EdgeInsets.zero,
       content: PageStorage(
@@ -20,8 +21,15 @@ class HomePage extends ConsumerWidget {
             },
             selected: ref.watch(selectedIndexProvider),
             size: NavigationPaneSize(openWidth: 100.w),
-            header: const SizedBox(
-              height: 20,
+            header: SizedBox(
+              height: 100,
+              child: Center(
+                child: Icon(
+                  FluentIcons.crown,
+                  color: darkMode ? AppColors.platinum : AppColors.shinyBlack,
+                  size: 40,
+                ),
+              ),
             ),
             items: [
               PaneItem(
@@ -39,6 +47,25 @@ class HomePage extends ConsumerWidget {
                 title: Text(context.loc.settingsTextHomePage),
                 body: const SettingsBody(),
               ),
+            ],
+            footerItems: [
+              PaneItem(
+                icon: GestureDetector(
+                  onTap: () {
+                    ref.read(prefsProvider).switchDarkMode();
+                  },
+                  child: Icon(
+                    darkMode ? Icons.light_mode : Icons.dark_mode,
+                    size: 30,
+                  ),
+                ),
+                enabled: false,
+                selectedTileColor:
+                    ButtonState.all(const Color.fromRGBO(0, 0, 0, 0)),
+                tileColor: ButtonState.all(const Color.fromRGBO(0, 0, 0, 0)),
+                body: const SizedBox.shrink(),
+              ),
+              PaneItemSeparator()
             ],
           ),
         ),
