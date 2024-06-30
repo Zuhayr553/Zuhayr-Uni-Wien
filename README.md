@@ -1,6 +1,6 @@
 # Flutter Project README
 
-This Flutter project showcases a clean architecture approach with Riverpod for state management, internationalization using IL10n, and utilization of hooks for enhanced widget management. Below is an overview of the project structure, features, and setup instructions.
+This Flutter project showcases a clean architecture approach with Riverpod for state management, internationalization using il10n (flutter_gen), and utilization of hooks for enhanced widget management. The architecture used is Riverpod architectur with a controller-service-repo pattern. Below is an overview of the project structure, features, and setup instructions.
 
 Brief project description goes here.
 
