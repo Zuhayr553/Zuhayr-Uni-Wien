@@ -1,7 +1,4 @@
-import 'package:fluent_ui/fluent_ui.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../configs/colors/app_colors.dart';
-import '../configs/theme/app_styles.dart';
+import 'package:zuhayr_uni_wien/features/home/widgets/widgets.dart';
 import 'routes.dart';
 import '../shared/providers/shared_providers.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -44,23 +41,5 @@ class MyApp extends ConsumerWidget {
         ),
       ),
     );
-  }
-}
-
-class PreloadBackgroundPainter extends CustomPainter {
-  PreloadBackgroundPainter();
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    var paint = Paint();
-    var rect = Offset.zero & size;
-    paint.shader = AppStyle.backgroundGradient.createShader(rect);
-
-    canvas.drawRect(rect, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return oldDelegate != this;
   }
 }
