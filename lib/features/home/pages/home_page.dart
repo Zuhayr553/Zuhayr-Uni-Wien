@@ -33,18 +33,30 @@ class HomePage extends ConsumerWidget {
             ),
             items: [
               PaneItem(
-                icon: const Icon(FluentIcons.home),
+                icon: const Icon(
+                  FluentIcons.home,
+                ),
+                title: Text(
+                  context.loc.homeTextHomePage,
+                ),
                 body: const HomeBody(),
-                title: Text(context.loc.homeTextHomePage),
               ),
               PaneItem(
-                icon: const Icon(FluentIcons.task_group),
-                title: Text(context.loc.taskManagerTextHomePage),
+                icon: const Icon(
+                  FluentIcons.task_group,
+                ),
+                title: Text(
+                  context.loc.taskManagerTextHomePage,
+                ),
                 body: const TasksBody(),
               ),
               PaneItem(
-                icon: const Icon(FluentIcons.settings),
-                title: Text(context.loc.settingsTextHomePage),
+                icon: const Icon(
+                  FluentIcons.settings,
+                ),
+                title: Text(
+                  context.loc.settingsTextHomePage,
+                ),
                 body: const SettingsBody(),
               ),
             ],
@@ -60,9 +72,12 @@ class HomePage extends ConsumerWidget {
                   ),
                 ),
                 enabled: false,
-                selectedTileColor:
-                    ButtonState.all(const Color.fromRGBO(0, 0, 0, 0)),
-                tileColor: ButtonState.all(const Color.fromRGBO(0, 0, 0, 0)),
+                selectedTileColor: ButtonState.all(
+                  const Color.fromRGBO(0, 0, 0, 0),
+                ),
+                tileColor: ButtonState.all(
+                  const Color.fromRGBO(0, 0, 0, 0),
+                ),
                 body: const SizedBox.shrink(),
               ),
               PaneItemSeparator()
