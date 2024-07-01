@@ -10,6 +10,8 @@ abstract class ApplicationColors {
   ColorScheme get colorScheme;
 }
 
+//ANCHOR - Dark Colors
+
 class DarkThemeColors implements ApplicationColors {
   @override
   Color get navigationPaneBackgroundColor => AppColors.shinyBlack;
@@ -42,6 +44,8 @@ class DarkThemeColors implements ApplicationColors {
         onError: Colors.white,
       );
 }
+
+//ANCHOR - Light Colors
 
 class LightThemeColors implements ApplicationColors {
   @override

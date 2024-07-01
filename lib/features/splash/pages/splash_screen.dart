@@ -1,5 +1,5 @@
 import '../../home/home.dart';
-import 'screen.dart';
+import 'pages.dart';
 
 class SplashScreen extends HookConsumerWidget {
   static const routeName = '/';

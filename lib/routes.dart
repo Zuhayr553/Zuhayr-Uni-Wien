@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../features/home/home.dart';
-import '../features/splash/screens/splash_screen.dart';
+import 'features/splash/pages/splash_screen.dart';
 import '../shared/debug/navigation_observer.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -11,7 +11,7 @@ class Routes {
     initialLocation: SplashScreen.routeName,
     observers: [AppNavigationObserver()],
     routes: [
-      /// Splash
+      /// ANCHOR: Splash
       GoRoute(
         path: SplashScreen.routeName,
         pageBuilder: (context, state) => const MaterialPage(
@@ -19,6 +19,8 @@ class Routes {
           child: SplashScreen(),
         ),
       ),
+
+      /// ANCHOR: Home
       GoRoute(
         path: HomePage.routeName,
         pageBuilder: (context, state) => MaterialPage(
