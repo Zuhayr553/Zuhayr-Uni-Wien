@@ -6,7 +6,7 @@ import '../shared/debug/navigation_observer.dart';
 final rootNavigatorKey = GlobalKey<NavigatorState>();
 
 class Routes {
-  final router = GoRouter(
+  static final router = GoRouter(
     navigatorKey: rootNavigatorKey,
     initialLocation: SplashScreen.routeName,
     observers: [AppNavigationObserver()],

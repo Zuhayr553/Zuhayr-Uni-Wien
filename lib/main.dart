@@ -40,7 +40,7 @@ class MyApp extends ConsumerWidget {
           supportedLocales: AppLocalizations.supportedLocales,
           onGenerateTitle: (context) => "Demo Application",
           debugShowCheckedModeBanner: false,
-          routerConfig: Routes().router,
+          routerConfig: Routes.router,
         ),
       ),
     );
