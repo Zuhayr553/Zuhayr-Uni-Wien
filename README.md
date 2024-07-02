@@ -135,7 +135,7 @@ This project utilizes state management from the `Riverpod` package and a `FakeDa
 ### Widget Layer
 
 **Using the Providers:**
-- The `prefsProvider` is utilized to obtain the dark mode preference of the user.
+- The `prefsProvider` is utilized to obtain the dark mode and language preference of the user.
 - The `taskProvider` is used to fetch the list of tasks asynchronously, handling the initial data loading state.
 - The `taskNotifierProvider` is watched to get the current list of tasks and ensure the UI updates in response to any changes in the task state.
 - The `chartDataProvider` is used to fetch chart data asynchronously, providing the UI with the necessary data for chart rendering and ensuring efficient memory management with the `autoDispose` feature.
